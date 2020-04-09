@@ -1,0 +1,32 @@
+pre.doc-code-container{
+  position: relative;
+  background-color: #323232;
+  color: white;
+  border-radius: 4px;
+  min-height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #323232;
+  //transition: border-color 0.5s ease-in-out;
+  button.btn-copy{
+    background: 0 0;
+    border: none;
+    color: #777777;
+    cursor: pointer;
+    font-size: .625rem;
+    outline: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: absolute;
+    right: .25rem;
+    top: .25rem;
+  }
+  &:hover{
+    border-color: yellow;
+    button.btn-copy{
+      background-color: yellow;
+    }
+  }
+}

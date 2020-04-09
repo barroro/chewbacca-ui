@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bulma/bulma.sass";
+
+html, body{
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container{
+  padding: 16px;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.main-page{
+  h1.title{
+    font-size: 60px;
+    margin-bottom: 30px;
+  }
+  h2.subtitle{
+    font-size: 26px;
+    color: rgba(#323232, 0.6);
+    margin-top: 0.75;
+    margin-bottom: 0;
+  }
+  button.get-started-button{
+    margin-top: 30px;
+  }
+  img.library-logo{
+    width: 250px;
+    height: auto;
+  }
+}
+
+.dropdown-menu.is-active{
+  display: block;
+}
+
+.p-1{
+  padding: 10px;
+}
+
+//Test checkbox

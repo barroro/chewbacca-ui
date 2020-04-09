@@ -1,0 +1,31 @@
+
+.chew-select{
+  .placeholder{
+    color: gray;
+  }
+  input.search-control{
+    display: flex;
+    border: none;
+    padding: 0;
+    margin: 0;
+    &:focus{
+      outline: none;
+    }
+  }
+  &:focus{
+    input.search-control{
+      display: block;
+    }
+  }
+  .chew-select-items-container{
+    overflow-x: auto;
+    max-height: 200px;
+  }
+  .no-match-results{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+  }
+}

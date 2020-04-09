@@ -1,0 +1,40 @@
+<div class="dropdown chew-select">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" (click)="openPanel()">
+      <div class="chew-select-trigger" [hidden]="opened">
+        <span class="placeholder" *ngIf="!value">{{ placeholder }}</span>
+        <span *ngIf="value">{{ value[bindLabel] }}</span>
+      </div>
+      <div class="chew-select-search-container" [hidden]="!opened">
+        <input #searchControl class="search-control" type="text" [formControl]="searchCtrl" />
+      </div>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu" [class.is-active]="opened">
+    <div class="dropdown-content" *ngIf="virtualized">
+      <cdk-virtual-scroll-viewport style="height: 150px" itemSize="20">
+        <ng-container *cdkVirtualFor="let i of itemsFiltered">
+          <chew-option [value]="i" (click)="onChangeOption($event)">
+            {{ i[bindLabel] }}
+          </chew-option>
+        </ng-container>
+      </cdk-virtual-scroll-viewport>
+    </div>
+    <div class="dropdown-content chew-select-items-container" *ngIf="!virtualized">
+      <chew-option *ngFor="let item of itemsFiltered" [value]="item" (click)="onChangeOption($event)">
+        <ng-template #defaultTemplate let-option>
+          {{ item[bindLabel] }}
+        </ng-template>
+        <ng-container [ngTemplateOutlet]="optionTemplateRef || defaultTemplate"
+          [ngTemplateOutletContext]="{ $implicit: item, index: i}">
+        </ng-container>
+      </chew-option>
+      <div class="no-match-results" *ngIf="itemsFiltered && itemsFiltered.length == 0">
+        <span>No match results</span>
+      </div>
+    </div>
+  </div>
+</div>

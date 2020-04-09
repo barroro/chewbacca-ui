@@ -1,0 +1,68 @@
+<section class="hero is-medium main-page">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <img src="../../../assets/chewbacca.png" alt="" srcset="" class="library-logo">
+        </div>
+        <div class="column is-three-quarters">
+          <h1 class="title">
+            CHEWBACCA-UI
+          </h1>
+          <h2 class="subtitle">
+            Angular components for faster and easier web development.
+          </h2>
+          <h2 class="subtitle">
+            Based in Bulma css library.
+          </h2>
+          <button button button-outlined color="dark" class="get-started-button">Get started</button>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div class="card">
+            <div class="card-content">
+              <p class="subtitle">
+                Installation
+              </p>
+              <div class="content">
+                Install Chewbacca-ui source files via npm. We take care of injecting the CSS needed.
+                <doc-code>
+                  <code>$ npm install --save chewbacca-ui</code>
+                </doc-code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-content">
+              <tabs (selectedTabChange)="tabChange($event)">
+                <tab title="panel 1">
+                  <checkbox [formControl]="checkboxCtrl">Ejemplo 1</checkbox>
+                  <checkbox [formControl]="checkboxCtrl2">Ejemplo 2</checkbox>
+                  <checkbox [formControl]="checkboxCtrl3">Ejemplo 3</checkbox>
+                </tab>
+                <tab title="panel 2">
+                  <chew-select [items]="items" bindLabel="name" bindValue="id" placeholder="Select an item..."
+                    [virtualized]="false" (changeOption)="changeOption($event)">
+                    <ng-template #optionTemplate let-value let-id=index>
+                      <i class="fa fa-info"></i>
+                      {{ value.name }} - {{ value.name }}
+                    </ng-template>
+                  </chew-select>
+                </tab>
+                <tab title="panel 3">
+                  Panel 3 content
+                </tab>
+                <tab title="panel 4">
+                  Panel 4 content
+                </tab>
+              </tabs>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

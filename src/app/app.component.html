@@ -1,0 +1,41 @@
+<navbar class="is-fixed-top is-white has-shadow">
+  <div class="navbar-brand">
+    <a class="navbar-item" [routerLink]="['/']">
+      <img src="../assets/chewbacca.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+        width="30" height="30">
+      <strong>CHEWBACCA-UI</strong>
+    </a>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" [routerLink]="['/home']">
+          Home
+        </a>
+        <a class="navbar-item" [routerLink]="['/documentation']">
+          Documentation
+        </a>
+      </div>
+    </div>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</navbar>
+<router-outlet></router-outlet>
+<!-- <button button color="danger">Test</button>
+<dropdown>
+  <button button color="danger" [dropdownTrigger]="dropdownMenu">Test</button>
+  <dropdown-menu #dropdownMenu>
+    <a dropdown-item (click)="onClick()">
+      Option 1
+    </a>
+    <a dropdown-item (click)="onClick()">
+      Option 2
+    </a>
+    <hr class="dropdown-divider">
+    <a dropdown-item (click)="onClick()">
+      With a divider
+    </a>
+  </dropdown-menu>
+</dropdown> -->
