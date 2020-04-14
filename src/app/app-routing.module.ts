@@ -8,7 +8,7 @@ const routes: Routes = [
     component: AppComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         loadChildren: () => import('./modules/home/home.module').then(mod => mod.HomeModule),
       },
       {

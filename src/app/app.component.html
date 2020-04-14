@@ -7,7 +7,7 @@
     </a>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" [routerLink]="['/home']">
+        <a class="navbar-item" [routerLink]="['/']">
           Home
         </a>
         <a class="navbar-item" [routerLink]="['/documentation']">
@@ -22,20 +22,15 @@
     </a>
   </div>
 </navbar>
-<router-outlet></router-outlet>
-<!-- <button button color="danger">Test</button>
-<dropdown>
-  <button button color="danger" [dropdownTrigger]="dropdownMenu">Test</button>
-  <dropdown-menu #dropdownMenu>
-    <a dropdown-item (click)="onClick()">
-      Option 1
-    </a>
-    <a dropdown-item (click)="onClick()">
-      Option 2
-    </a>
-    <hr class="dropdown-divider">
-    <a dropdown-item (click)="onClick()">
-      With a divider
-    </a>
-  </dropdown-menu>
-</dropdown> -->
+<div class="chew-doc-main-container">
+  <router-outlet></router-outlet>
+</div>
+<!-- <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer> -->

@@ -9,6 +9,5 @@ export class AppComponent {
   title = 'performance-test';
 
   onClick() {
-    console.log('app clicked');
   }
 }

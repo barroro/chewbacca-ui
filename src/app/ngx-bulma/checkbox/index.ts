@@ -34,7 +34,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       height: 18px;
       width: 18px;
       background-color: #dadada;
-      border-radius: 4px;
+      border-radius: 2px;
       /*transition: background-color 0.12s ease-in;*/
     }
     
@@ -58,9 +58,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     
     .container-checkbox .checkmark:after {
       left: 6px;
-      top: 4px;
-      width: 5px;
-      height: 8px;
+      top: 2px;
+      width: 6px;
+      height: 12px;
       border: solid white;
       border-width: 0 2px 2px 0;
       -webkit-transform: rotate(45deg);

@@ -12,8 +12,6 @@ export class DocCodeComponent implements OnInit {
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
-    console.log(this.codeItems);
-    console.log(this.el.nativeElement.getElementsByTagName('code'));
   }
 
   copyContent() {

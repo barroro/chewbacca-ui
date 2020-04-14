@@ -6,6 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: DocumentationComponent,
+    children: [
+      {
+        path: 'categories',
+        loadChildren: () => import('./modules/categories/categories.module').then(mod => mod.CategoriesModule),
+      },
+      {
+        path: 'forms',
+        loadChildren: () => import('./modules/forms/forms.module').then(mod => mod.FormsModule),
+      }
+    ]
   }
 ];
 

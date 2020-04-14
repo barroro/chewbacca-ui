@@ -1,5 +1,7 @@
 
 .chew-select{
+  width: 100%;
+
   .placeholder{
     color: gray;
   }
@@ -8,6 +10,7 @@
     border: none;
     padding: 0;
     margin: 0;
+    font-size: inherit;
     &:focus{
       outline: none;
     }
@@ -28,4 +31,12 @@
     justify-content: center;
     color: gray;
   }
+  .select-menu-inner {
+    //width: 180px;
+    max-height: 128px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 }
+
+

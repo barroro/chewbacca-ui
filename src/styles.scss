@@ -1,15 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bulma/bulma.sass";
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 html, body{
   margin: 0 auto;
   padding: 0;
 }
 
-.container{
-  padding: 16px;
-  overflow: hidden;
-  min-height: 100vh;
+.chew-doc-main-container{
+  margin-top: 60px;
 }
 
 .main-page{
@@ -36,8 +35,53 @@ html, body{
   display: block;
 }
 
+.dropdown-item.chew-option:focus{
+  background-color: gray;
+}
+
 .p-1{
   padding: 10px;
 }
 
-//Test checkbox
+.bd-links{
+  display: flex;
+  flex-wrap: wrap;
+  .bd-link{
+    width: 50%;
+    border-radius: 6px;
+    color: #7a7a7a;
+    display: block;
+    font-size: 1.25rem;
+    padding: 1rem 3rem 1.5rem 5rem;
+    position: relative;
+    transition-duration: 86ms;
+    transition-property: background-color,color;
+    &:hover {
+      background-color: #fafafa;
+      color: #363636;
+    }
+    .bd-link-name{
+      color: #363636;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: .25em;
+      position: relative;
+    }
+    .bd-link-figure{
+      position: absolute;
+      right: calc(100% + .75em);
+      text-align: center;
+      top: 0;
+      min-width: 1.5em;
+      .bd-link-icon{
+        display: block;
+      font-size: 2rem;
+      width: 1.5em;
+      }
+      .has-text-link {
+        color: #3273dc!important;
+      }
+    }
+  }
+}

@@ -1,11 +1,14 @@
 import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'dropdown',
-  templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  selector: 'chew-dropdown',
+  template: `
+    <div class="dropdown {{class}}">
+      <ng-content></ng-content>
+    </div>
+  `,
 })
-export class DropdownComponent implements OnInit {
+export class ChewDropdownComponent implements OnInit {
 
   @Input() class: string;
 

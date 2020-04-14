@@ -1,0 +1,65 @@
+@import '../../../../node_modules/bulma/bulma.sass';
+
+.radio-button-label{
+  user-select: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.radio-button-container {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radio-button-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid grey;
+}
+
+.radio-button-container input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radio-button-container input:checked ~ .checkmark {
+  display: block;
+  border: 2px solid $primary;
+}
+.radio-button-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.radio-button-container .checkmark:after {
+ 	top: 2px;
+	left: 2px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: $primary;
+}

@@ -5,8 +5,8 @@ import { TabComponent } from './tab.component';
   selector: 'tabs',
   template: `
     <div class="tabs">
-      <ul>
-        <li *ngFor="let tab of tabs; let i = index" (click)="selectTab(tab, i)" [class.is-active]="tab.active">
+      <ul role="tablist" aria-label="Sample Tabs">
+        <li *ngFor="let tab of tabs; let i = index" (click)="selectTab(tab, i)" [class.is-active]="tab.active" role="tab">
           <a>{{tab.title}}</a>
         </li>
       </ul>

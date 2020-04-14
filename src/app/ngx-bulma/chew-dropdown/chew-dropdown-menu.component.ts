@@ -1,17 +1,22 @@
 import { Component, OnInit, Input, Renderer2, ElementRef, HostListener, ContentChildren, QueryList } from '@angular/core';
-import { DropdownItemDirective } from '../dropdown-item.directive';
+import { ChewDropdownItemDirective } from './chew-dropdown-item.directive';
 
 @Component({
-  selector: 'dropdown-menu',
-  templateUrl: './dropdown-menu.component.html',
-  styleUrls: ['./dropdown-menu.component.scss']
+  selector: 'chew-dropdown-menu',
+  template: `
+    <div class="dropdown-menu">
+      <div class="dropdown-content {{class}}">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  `,
 })
-export class DropdownMenuComponent implements OnInit {
+export class ChewDropdownMenuComponent implements OnInit {
 
   @Input() class: string;
   @Input() open: boolean = false;
   opened: boolean = false;
-  @ContentChildren(DropdownItemDirective) contentChildren !: QueryList<DropdownItemDirective>;
+  @ContentChildren(ChewDropdownItemDirective) contentChildren !: QueryList<ChewDropdownItemDirective>;
 
   constructor(private renderer: Renderer2, private el: ElementRef) { }
 

@@ -15,7 +15,7 @@
           <h2 class="subtitle">
             Based in Bulma css library.
           </h2>
-          <button button button-outlined color="dark" class="get-started-button">Get started</button>
+          <button chew-button-outlined color="dark" class="get-started-button">Get started</button>
         </div>
       </div>
       <div class="columns">
@@ -39,21 +39,66 @@
             <div class="card-content">
               <tabs (selectedTabChange)="tabChange($event)">
                 <tab title="panel 1">
-                  <checkbox [formControl]="checkboxCtrl">Ejemplo 1</checkbox>
-                  <checkbox [formControl]="checkboxCtrl2">Ejemplo 2</checkbox>
-                  <checkbox [formControl]="checkboxCtrl3">Ejemplo 3</checkbox>
+                  <form [formGroup]="form">
+                    <div class="columns">
+                      <div class="column">
+                        <chew-field>
+                          <input type="text" class="input" placeholder="Name" formControlName="name">
+                        </chew-field>
+                      </div>
+                      <div class="column">
+                        <chew-field>
+                          <input type="text" class="input" placeholder="Lastname" formControlName="name">
+                        </chew-field>
+                      </div>
+                    </div>
+                    <div class="columns">
+                      <div class="column">
+                        <chew-field>
+                          <toggle-switch formControlName="active">Is active</toggle-switch>
+                        </chew-field>
+                      </div>
+                    </div>
+                    <chew-field>
+                      <chew-radio-group formControlName="gender">
+                        <chew-radio-button value="male">Male</chew-radio-button>
+                        <chew-radio-button value="female">Female</chew-radio-button>
+                      </chew-radio-group>
+                    </chew-field>
+                  </form>
+                  <pre>
+                    {{ form.value | json }}
+                  </pre>
                 </tab>
                 <tab title="panel 2">
                   <chew-select [items]="items" bindLabel="name" bindValue="id" placeholder="Select an item..."
-                    [virtualized]="false" (changeOption)="changeOption($event)">
+                    (changeOption)="changeOption($event)" class="column">
+                    <ng-template #triggerTemplate let-value>
+                      <i *ngIf="value" class="fa fa-info"></i>
+                      {{ value?.name || 'Select item...' }}
+                    </ng-template>
                     <ng-template #optionTemplate let-value let-id=index>
                       <i class="fa fa-info"></i>
-                      {{ value.name }} - {{ value.name }}
+                      {{ value.name }}
                     </ng-template>
                   </chew-select>
                 </tab>
                 <tab title="panel 3">
-                  Panel 3 content
+                  <chew-dropdown>
+                    <button chew-button color="dark" [chewDropdownTrigger]="dropdownMenu">Test</button>
+                    <chew-dropdown-menu #dropdownMenu>
+                      <a chew-dropdown-item (click)="onClickItem()">
+                        Option 1
+                      </a>
+                      <a chew-dropdown-item (click)="onClickItem()">
+                        Option 2
+                      </a>
+                      <hr class="dropdown-divider">
+                      <a chew-dropdown-item (click)="onClickItem()">
+                        With a divider
+                      </a>
+                    </chew-dropdown-menu>
+                  </chew-dropdown>
                 </tab>
                 <tab title="panel 4">
                   Panel 4 content
