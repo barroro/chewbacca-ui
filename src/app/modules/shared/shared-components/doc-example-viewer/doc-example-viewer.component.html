@@ -1,0 +1,20 @@
+<div class="doc-example-viewer-container">
+  <div class="doc-example-viewer-header">
+    <h3 class="doc-example-viewer-title">{{title}}</h3>
+    <div class="doc-example-viewer-spacer"></div>
+    <div class="doc-example-viewer-actions">
+      <button chew-button-rounded size="small" chewTooltip="Show code" (click)="showCode()">
+        <span class="icon is-small">
+          <i class="fas fa-code"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="doc-example-viewer-code" [hidden]="!opened">
+    <ng-container [ngTemplateOutlet]="templateCodeRef">
+    </ng-container>
+  </div>
+  <div class="doc-example-viewer-content">
+    <ng-container [ngTemplateOutlet]="templateContentRef">
+    </ng-container>
+  </div>

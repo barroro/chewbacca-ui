@@ -31,6 +31,37 @@ export class HomeComponent implements OnInit {
   //   { id: 3, name: 'Ejemplo 3' }
   // ];
 
+  code = `
+    <chew-dropdown>
+      <button chew-button color="dark" [chewDropdownTrigger]="dropdownMenu">Test</button>
+        <chew-dropdown-menu #dropdownMenu>
+          <a chew-dropdown-item (click)="onClickItem()">
+            Option 1
+          </a>
+          <a chew-dropdown-item (click)="onClickItem()">
+            Option 2
+          </a>
+          <hr class="dropdown-divider">
+          <a chew-dropdown-item (click)="onClickItem()">
+            With a divider
+          </a>
+        </chew-dropdown-menu>
+      </chew-dropdown>
+  `;
+
+  codeT = `
+    import { NgModule } from '@angular/core';
+    import { CommonModule } from '@angular/common';
+    import { ChewDropdownModule } from './chew-dropdown/chew-dropdown.module';
+  
+    @NgModule({
+      imports: [
+        ChewDropdownModule,
+      ],
+    })
+    export class AppModule { }
+  `;
+
   form: FormGroup;
 
   public items = Array.from(Array(10000), (x, i) => {
@@ -64,3 +95,4 @@ export class HomeComponent implements OnInit {
   }
 
 }
+

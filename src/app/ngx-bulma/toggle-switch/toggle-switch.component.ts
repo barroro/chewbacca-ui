@@ -1,20 +1,20 @@
-import { Component, Input, Output, EventEmitter, forwardRef, HostListener } from '@angular/core';
+import { Component, Input, Output, EventEmitter, forwardRef, HostListener, Renderer2, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ENTER } from '@angular/cdk/keycodes';
 
 @Component({
-  host: {
-    'tabIndex': '0',
-    'role': 'checkbox'
-  },
+  // host: {
+  //   'tabIndex': '0',
+  //   'role': 'checkbox'
+  // },
   selector: 'toggle-switch',
   styleUrls: [
     './toggle-switch.component.scss'
   ],
   template: `
-    <label class="switch">
+    <label class="switch" [class.disabled]="disabled">
       <div class="toggle-bar">
-        <input type="checkbox" (change)="toggleChange($event)" [checked]="checked">
+        <input type="checkbox" (change)="toggleChange($event)" [checked]="innerValue" [disabled]="disabled" tabIndex="0" aria-checked="false">
         <span class="slider round"></span>
       </div>
       <span class="toggle-content">
@@ -33,17 +33,33 @@ import { ENTER } from '@angular/cdk/keycodes';
 export class ToggleSwitchComponent implements ControlValueAccessor {
 
   @Input() checked: boolean = false;
+  @Input() color: ThemePalette;
   @Output() change: EventEmitter<any>;
 
-  value: boolean;
-  isDisabled: boolean;
+  innerValue: boolean;
+  disabled: boolean;
   onChange = (_: any) => { }
   onTouch = () => { }
 
+  get value(): boolean {
+    return this.innerValue;
+  };
+
+  set value(v: boolean) {
+    if (v !== this.innerValue) {
+      this.innerValue = v;
+      this.onChange(v);
+    }
+  }
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+    if (this.color) this.renderer.addClass(el.nativeElement, `is-${this.color}`);
+  }
+
   toggleChange(event) {
-    this.value = event.target.checked;
+    this.innerValue = event.target.checked;
     this.onTouch();
-    this.onChange(this.value);
+    this.onChange(this.innerValue);
   }
   writeValue(value: any): void {
     if (value) {
@@ -59,14 +75,24 @@ export class ToggleSwitchComponent implements ControlValueAccessor {
     this.onTouch = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
+    this.disabled = isDisabled;
   }
   @HostListener('keydown', ['$event']) onKeydown(event: KeyboardEvent) {
     if (event.keyCode == ENTER) {
-      this.checked = !this.value;
-      this.value = !this.value;
+      this.innerValue = !this.innerValue;
       this.onTouch();
       this.onChange(this.value);
     }
   }
+}
+
+export enum ThemePalette {
+  primary = 'primary',
+  secondary = 'secondary',
+  success = 'success',
+  warning = 'warning',
+  info = 'info',
+  danger = 'danger',
+  light = 'light',
+  dark = 'dark'
 }

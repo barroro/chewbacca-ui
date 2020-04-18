@@ -1,4 +1,4 @@
 <pre class="doc-code-container">
-  <button chew-button size="small" class="btn-copy">Copy</button>
-  <ng-content></ng-content>
+  <button chew-button size="small" class="btn-copy" (click)="copy()" title="Copy code" chewTooltip="{{messageTooltip}}">Copy</button>
+  <code class="language-{{language}}" [innerHTML]="valueHighlight"></code>
 </pre>

@@ -26,10 +26,19 @@
                 Installation
               </p>
               <div class="content">
-                Install Chewbacca-ui source files via npm. We take care of injecting the CSS needed.
-                <doc-code>
-                  <code>$ npm install --save chewbacca-ui</code>
-                </doc-code>
+                <p>Install Chewbacca-ui source files via npm. We take care of injecting the CSS needed.</p>
+              </div>
+              <div class="content">
+                <p>First you need install bulma css library.</p>
+                <pre class="intro-npm">
+                  <code>npm install bulma</code>
+                  <code class="intro-npm-copy">copy</code>
+                </pre>
+                <p>And then chewbacca-UI.</p>
+                <pre class="intro-npm">
+                  <code>npm install chewbacca-ui</code>
+                  <code class="intro-npm-copy">copy</code>
+                </pre>
               </div>
             </div>
           </div>
@@ -62,7 +71,7 @@
                     <chew-field>
                       <chew-radio-group formControlName="gender">
                         <chew-radio-button value="male">Male</chew-radio-button>
-                        <chew-radio-button value="female">Female</chew-radio-button>
+                        <chew-radio-button value="female" checked="true">Female</chew-radio-button>
                       </chew-radio-group>
                     </chew-field>
                   </form>

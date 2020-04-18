@@ -1,0 +1,39 @@
+
+$lineColor: rgba(#323232, 0.2);
+
+.doc-example-viewer-container{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border: 1px solid $lineColor;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  .doc-example-viewer-header{
+    height: 50px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $lineColor;
+    .doc-example-viewer-title{
+      font-size: 20px;
+      margin: 0;
+    }
+    .doc-example-viewer-spacer {
+      flex: 1 1 auto;
+    }
+  }
+  .doc-example-viewer-content{
+    padding: 30px;
+  }
+  .doc-example-viewer-code{
+    border-bottom: 1px solid $lineColor;
+  }
+}
+
+.chew-divider-line{
+  display: flex;
+  flex: 1;
+  border-bottom: 1px solid $lineColor;
+}

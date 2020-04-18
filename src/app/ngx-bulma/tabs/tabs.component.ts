@@ -1,10 +1,10 @@
-import { Component, OnInit, AfterContentInit, QueryList, ContentChildren, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterContentInit, QueryList, ContentChildren, Output, EventEmitter, Input } from '@angular/core';
 import { TabComponent } from './tab.component';
 
 @Component({
   selector: 'tabs',
   template: `
-    <div class="tabs">
+    <div class="tabs {{class}}">
       <ul role="tablist" aria-label="Sample Tabs">
         <li *ngFor="let tab of tabs; let i = index" (click)="selectTab(tab, i)" [class.is-active]="tab.active" role="tab">
           <a>{{tab.title}}</a>
@@ -18,6 +18,7 @@ export class TabsComponent implements AfterContentInit {
 
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Output() selectedTabChange = new EventEmitter<TabChangeEvent>();
+  @Input() class: string;
 
   ngAfterContentInit() {
     let activeTabs = this.tabs.filter((tab) => tab.active);

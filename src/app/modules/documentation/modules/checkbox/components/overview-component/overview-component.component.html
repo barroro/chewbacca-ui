@@ -1,0 +1,87 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#" class="is-active">Checkbox</a></li>
+        </ul>
+      </nav>
+      <h1 class="title">
+        Checkbox
+      </h1>
+      <h2 class="subtitle is-4">
+        Chew Checkbox provides the same functionality as a native
+        input checkbox enhanced with Bulma styling.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <tabs class="is-fullwidth">
+      <tab title="OVERVIEW">
+        <div class="content">
+          <p>Toggle switch is an on/off control that can be toggled via clicking.</p>
+        </div>
+        <app-doc-example-viewer title="Basic example">
+          <ng-template #templateCode>
+            <tabs class="is-fullwidth mb-none">
+              <tab title="HTML">
+                <doc-code language="html" code="<toggle-switch>Click me to slide!</toggle-switch>"></doc-code>
+              </tab>
+              <tab title="TS">
+                <doc-code language="typescript" code="
+                import { Component, OnInit } from '@angular/core'; 
+                @Component({
+                  selector: 'app-toggle-switch-basic-example',
+                  templateUrl: './toggle-switch-basic-example.component.html',
+                  styleUrls: ['./toggle-switch-basic-example.component.scss']
+                })
+                export class ToggleSwitchBasicExampleComponent implements OnInit {
+        
+                  constructor() { }
+        
+                  ngOnInit() {
+                  }
+        
+                }">
+                </doc-code>
+              </tab>
+              <tab title="CSS">
+                <doc-code language="css" code="/** No CSS for this example */"></doc-code>
+              </tab>
+            </tabs>
+          </ng-template>
+          <ng-template #templateContent>
+            <chew-checkbox>Check me!</chew-checkbox>
+          </ng-template>
+        </app-doc-example-viewer>
+      </tab>
+      <tab title="API">
+      </tab>
+      <tab title="EXAMPLES">
+        <app-doc-example-viewer title="Configurable checkbox">
+          <ng-template #templateCode>
+            <tabs class="is-fullwidth mb-none">
+              <tab title="HTML">
+                <doc-code language="html" [code]="codeHtmlConfExample"></doc-code>
+              </tab>
+              <tab title="TS">
+                <doc-code language="typescript" [code]="codeTsConfExample">
+                </doc-code>
+              </tab>
+              <tab title="CSS">
+                <doc-code language="css" code="/** No CSS for this example */"></doc-code>
+              </tab>
+            </tabs>
+          </ng-template>
+          <ng-template #templateContent>
+            <app-checkbox-conf-example></app-checkbox-conf-example>
+          </ng-template>
+        </app-doc-example-viewer>
+      </tab>
+    </tabs>
+  </div>
+</section>

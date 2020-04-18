@@ -1,0 +1,33 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#" class="is-active">Dropdown</a></li>
+        </ul>
+      </nav>
+      <h1 class="title">
+        Dropdown
+      </h1>
+      <h2 class="subtitle is-4">
+        <code>&lt;chew-dropdown&gt;</code> provides a float panel with list of options.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <tabs class="is-fullwidth">
+      <tab title="OVERVIEW">
+        test
+      </tab>
+      <tab title="API">
+      </tab>
+      <tab title="EXAMPLES">
+        <doc-example-viewer-test *ngFor="let d of dropdownExamples" [docExample]="d"></doc-example-viewer-test>
+      </tab>
+    </tabs>
+  </div>
+</section>

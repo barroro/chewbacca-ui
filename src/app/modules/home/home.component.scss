@@ -1,0 +1,22 @@
+.intro-npm{
+  background: #242424;
+  border-radius: 4px;
+  color: #fff;
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  line-height: 20px;
+  padding: 15px 25px;
+  position: relative;
+  .intro-npm-copy {
+    border-radius: 4px;
+    color: #ffdd57;
+    cursor: pointer;
+    margin: -2px -7px -3px;
+    padding: 2px 7px 3px;
+    &:hover{
+      background-color: #ffdd57;
+      color: #242424;
+    }
+}
+}

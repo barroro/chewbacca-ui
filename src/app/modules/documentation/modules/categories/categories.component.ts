@@ -9,6 +9,12 @@ export class Category {
 
 export const categoriesList: Array<Category> = [
   {
+    title: 'Overview',
+    description: 'An overview of what Chewbacca-UI as a framework is all about',
+    path: 'overview',
+    icon: 'fas fa-eye'
+  },
+  {
     title: 'Form Controls',
     description: 'Controls that collect and validate user input',
     path: 'forms',
@@ -19,6 +25,12 @@ export const categoriesList: Array<Category> = [
     description: 'Essential interface elements to create pages faster',
     path: 'elements',
     icon: 'fa fa-cube'
+  },
+  {
+    title: 'Navigation',
+    description: 'All the components you need to navigate between views',
+    path: 'navigation',
+    icon: 'fa fa-directions'
   }
 ]
 

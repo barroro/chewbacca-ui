@@ -1,0 +1,20 @@
+<chew-dropdown>
+  <button chew-button color="dark" [chewDropdownTrigger]="dropdownMenu">
+    <span>Dropdown</span>
+    <span class="icon is-small">
+      <i class="fas fa-angle-down" aria-hidden="true"></i>
+    </span>
+  </button>
+  <chew-dropdown-menu #dropdownMenu>
+    <a chew-dropdown-item>
+      Option 1
+    </a>
+    <a chew-dropdown-item>
+      Option 2
+    </a>
+    <hr class="dropdown-divider">
+    <a chew-dropdown-item>
+      With a divider
+    </a>
+  </chew-dropdown-menu>
+</chew-dropdown>

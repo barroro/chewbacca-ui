@@ -1,25 +1,36 @@
-<navbar class="is-fixed-top is-white has-shadow">
-  <div class="navbar-brand">
-    <a class="navbar-item" [routerLink]="['/']">
-      <img src="../assets/chewbacca.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
-        width="30" height="30">
-      <strong>CHEWBACCA-UI</strong>
-    </a>
+<navbar class="is-fixed-top has-shadow is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" [routerLink]="['/']">
+        <img src="../assets/chewbacca.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+          width="30" height="30">
+        <span>CHEWBACCA-UI</span>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" [routerLink]="['/']">
-          Home
-        </a>
         <a class="navbar-item" [routerLink]="['/documentation']">
           Documentation
         </a>
       </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="icon is-medium">
+            <i class="fab fa-lg fa-github"></i>
+          </span>
+          <div class="buttons">
+            <a chew-button-outlined color="primary">
+              <strong>Download</strong>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
   </div>
 </navbar>
 <div class="chew-doc-main-container">
