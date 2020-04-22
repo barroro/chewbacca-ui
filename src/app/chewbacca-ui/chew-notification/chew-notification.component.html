@@ -1,0 +1,6 @@
+<div class="notification chew-notification is-info" [@fadeAnimation]="{value: animationState, params:
+  { fadeIn: notificationConfig.animation.fadeIn, fadeOut: notificationConfig.animation.fadeOut }}"
+  (@fadeAnimation.done)="onFadeFinished($event)">
+  <button class="delete" (click)="close()"></button>
+  {{ data.text }}
+</div>

@@ -5,17 +5,17 @@ import { map, startWith, takeUntil, debounceTime, filter } from 'rxjs/operators'
 import { createPopper } from '@popperjs/core';
 import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { OverlayRef, Overlay, OverlayConfig } from '@angular/cdk/overlay';
-import { ChewOptionComponent } from '../chew-option/chew-option.component';
 import { FocusKeyManager, ActiveDescendantKeyManager } from '@angular/cdk/a11y';
 import { ENTER } from '@angular/cdk/keycodes';
+import { ChewOptionComponent } from '../chew-option/chew-option.component';
 
 @Component({
-  selector: 'chew-select',
-  templateUrl: './chew-select.component.html',
-  styleUrls: ['./chew-select.component.scss'],
+  selector: 'chew-autocomplete',
+  templateUrl: './chew-autocomplete.component.html',
+  styleUrls: ['./chew-autocomplete.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChewSelectComponent implements OnInit, OnChanges, OnDestroy {
+export class ChewAutocompleteComponent implements OnInit, OnChanges, OnDestroy {
 
   //declare inputs
   @Input() items: Array<any>;

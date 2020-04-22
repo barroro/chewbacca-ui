@@ -15,7 +15,8 @@
           <h2 class="subtitle">
             Based in Bulma css library.
           </h2>
-          <button chew-button-outlined color="dark" class="get-started-button">Get started</button>
+          <button chew-button-outlined color="dark" class="get-started-button" (click)="showNotification()">Get
+            started</button>
         </div>
       </div>
       <div class="columns">
@@ -64,7 +65,7 @@
                     <div class="columns">
                       <div class="column">
                         <chew-field>
-                          <toggle-switch formControlName="active">Is active</toggle-switch>
+                          <chew-toggle-switch formControlName="active">Is active</chew-toggle-switch>
                         </chew-field>
                       </div>
                     </div>
@@ -80,7 +81,7 @@
                   </pre>
                 </tab>
                 <tab title="panel 2">
-                  <chew-select [items]="items" bindLabel="name" bindValue="id" placeholder="Select an item..."
+                  <!-- <chew-select [items]="items" bindLabel="name" bindValue="id" placeholder="Select an item..."
                     (changeOption)="changeOption($event)" class="column">
                     <ng-template #triggerTemplate let-value>
                       <i *ngIf="value" class="fa fa-info"></i>
@@ -90,7 +91,7 @@
                       <i class="fa fa-info"></i>
                       {{ value.name }}
                     </ng-template>
-                  </chew-select>
+                  </chew-select> -->
                 </tab>
                 <tab title="panel 3">
                   <chew-dropdown>

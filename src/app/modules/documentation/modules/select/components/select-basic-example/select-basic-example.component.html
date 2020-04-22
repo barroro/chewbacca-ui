@@ -1,1 +1,9 @@
-<p>select-basic-example works!</p>
+<!-- <chew-select placeholder="Select item" (changeOption)="changeOption($event)">
+  <chew-option *ngFor="let o of options" [value]="o">{{o.label}} - value: {{o.value}}</chew-option>
+</chew-select> -->
+<chew-select placeholder="Select role" [formControl]="selectCtrl">
+  <chew-option value="admin">Admin</chew-option>
+  <chew-option value="writer">Writer</chew-option>
+  <chew-option value="reader">Reader</chew-option>
+</chew-select>
+<span>Value selected: {{selectCtrl.value}}</span>

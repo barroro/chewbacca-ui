@@ -17,6 +17,10 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     CommonModule,
     CheckboxRoutingModule,
     SharedModule
+  ],
+  entryComponents: [
+    CheckboxBasicExampleComponent,
+    CheckboxConfExampleComponent
   ]
 })
 export class CheckboxModule { }

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToggleSwitchComponent } from './toggle-switch.component';
+import { ChewToggleSwitchComponent } from './toggle-switch.component';
 
 @NgModule({
   declarations: [
-    ToggleSwitchComponent
+    ChewToggleSwitchComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ToggleSwitchComponent
+    ChewToggleSwitchComponent
   ]
 })
-export class ToggleSwitchModule { }
+export class ChewToggleSwitchModule { }

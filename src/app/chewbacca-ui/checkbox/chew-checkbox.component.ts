@@ -1,43 +1,43 @@
-import { Component, Input, Output, EventEmitter, forwardRef, HostListener, Renderer2, ElementRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, forwardRef, HostListener } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ENTER } from '@angular/cdk/keycodes';
+import { ThemePalette } from '../chew-toggle-switch/toggle-switch.component';
 
 @Component({
   // host: {
   //   'tabIndex': '0',
   //   'role': 'checkbox'
   // },
-  selector: 'toggle-switch',
-  styleUrls: [
-    './toggle-switch.component.scss'
-  ],
+  selector: 'chew-checkbox',
+  //styleUrls: ['./chew-checkbox.component.scss'],
   template: `
-    <label class="switch" [class.disabled]="disabled">
-      <div class="toggle-bar">
-        <input type="checkbox" (change)="toggleChange($event)" [checked]="innerValue" [disabled]="disabled" tabIndex="0" aria-checked="false">
-        <span class="slider round"></span>
-      </div>
-      <span class="toggle-content">
+    <label class="chew-checkbox {{class}}">
+      <span class="checkbox-label">
         <ng-content></ng-content>
       </span>
+      <input class="checkbox" type="checkbox" [checked]="innerValue"
+      [disabled]="isDisabled" (change)="onChangeCheckbox($event)" tabIndex="0" aria-checked="false">
+      <span class="checkmark"></span>
+      <span class="checkmark-focus-indicator"></span>
     </label>
   `,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ToggleSwitchComponent),
+      useExisting: forwardRef(() => ChewCheckboxComponent),
       multi: true
     }
   ]
 })
-export class ToggleSwitchComponent implements ControlValueAccessor {
+export class ChewCheckboxComponent implements ControlValueAccessor {
 
   @Input() checked: boolean = false;
   @Input() color: ThemePalette;
+  @Input() class: string;
   @Output() change: EventEmitter<any>;
 
   innerValue: boolean;
-  disabled: boolean;
+  isDisabled: boolean;
   onChange = (_: any) => { }
   onTouch = () => { }
 
@@ -52,15 +52,12 @@ export class ToggleSwitchComponent implements ControlValueAccessor {
     }
   }
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
-    if (this.color) this.renderer.addClass(el.nativeElement, `is-${this.color}`);
+  onChangeCheckbox(event) {
+    this.value = event.target.checked;
+    this.onTouch();
+    this.onChange(this.value);
   }
 
-  toggleChange(event) {
-    this.innerValue = event.target.checked;
-    this.onTouch();
-    this.onChange(this.innerValue);
-  }
   writeValue(value: any): void {
     if (value) {
       this.value = true;
@@ -75,7 +72,7 @@ export class ToggleSwitchComponent implements ControlValueAccessor {
     this.onTouch = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    this.disabled = isDisabled;
+    this.isDisabled = isDisabled;
   }
   @HostListener('keydown', ['$event']) onKeydown(event: KeyboardEvent) {
     if (event.keyCode == ENTER) {
@@ -84,15 +81,4 @@ export class ToggleSwitchComponent implements ControlValueAccessor {
       this.onChange(this.value);
     }
   }
-}
-
-export enum ThemePalette {
-  primary = 'primary',
-  secondary = 'secondary',
-  success = 'success',
-  warning = 'warning',
-  info = 'info',
-  danger = 'danger',
-  light = 'light',
-  dark = 'dark'
 }

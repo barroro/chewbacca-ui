@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TabChangeEvent } from 'src/app/ngx-bulma/tabs/tabs.component';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { TabChangeEvent } from 'src/app/chewbacca-ui/tabs/tabs.component';
+import { ChewNotificationService } from 'src/app/chewbacca-ui/chew-notification/chew-notification.service';
 
 @Component({
   selector: 'app-home',
@@ -68,7 +69,7 @@ export class HomeComponent implements OnInit {
     return { id: i, name: `Ejemplo ${i}` };
   });
 
-  constructor(private title: Title, private fb: FormBuilder) {
+  constructor(private title: Title, private fb: FormBuilder, private notificationService: ChewNotificationService) {
     title.setTitle('Chewbacca-UI | Free, open source and angular components library');
   }
 
@@ -90,9 +91,35 @@ export class HomeComponent implements OnInit {
 
   }
 
-  onClickItem() {
-    //alert('item clicked!')
+  private count = 1;
+  showNotification() {
+    this.notificationService.show({
+      text: `Chew notification message with large content inside ${this.count}`,
+      type: 'success',
+    });
+    // this.notificationService.showFromComponent(PizzaPartyComponent, {
+    //   text: `Chew notification message with large content inside ${this.count}`,
+    //   type: 'success',
+    // });
+    this.count += 1;
   }
 
+  onClickItem() { }
+
 }
+
+@Component({
+  selector: 'snack-bar-component-example-snack',
+  template: `
+    <div class="notification">
+      Pizza party!!! 🍕
+    </div>
+  `,
+  styles: [`
+    .example-pizza-party {
+      color: hotpink;
+    }
+  `],
+})
+export class PizzaPartyComponent { }
 

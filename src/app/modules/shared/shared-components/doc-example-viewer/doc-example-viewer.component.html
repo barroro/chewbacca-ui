@@ -1,6 +1,6 @@
 <div class="doc-example-viewer-container">
   <div class="doc-example-viewer-header">
-    <h3 class="doc-example-viewer-title">{{title}}</h3>
+    <h3 class="doc-example-viewer-title">{{docExample.title}}</h3>
     <div class="doc-example-viewer-spacer"></div>
     <div class="doc-example-viewer-actions">
       <button chew-button-rounded size="small" chewTooltip="Show code" (click)="showCode()">
@@ -11,10 +11,20 @@
     </div>
   </div>
   <div class="doc-example-viewer-code" [hidden]="!opened">
-    <ng-container [ngTemplateOutlet]="templateCodeRef">
-    </ng-container>
+    <tabs class="is-fullwidth mb-none">
+      <tab title="HTML">
+        <doc-code language="html" [code]="docExample.html"></doc-code>
+      </tab>
+      <tab title="TS">
+        <doc-code language="typescript" [code]="docExample.typescript">
+        </doc-code>
+      </tab>
+      <tab title="CSS">
+        <doc-code language="scss" [code]="docExample.scss"></doc-code>
+      </tab>
+    </tabs>
   </div>
   <div class="doc-example-viewer-content">
-    <ng-container [ngTemplateOutlet]="templateContentRef">
+    <ng-container *ngComponentOutlet="docExample.component">
     </ng-container>
   </div>

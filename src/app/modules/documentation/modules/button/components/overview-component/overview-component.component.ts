@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { buttonExamples } from '../../button-examples-data';
+import { buttonExamples, buttonBasicExample } from '../../button-examples-data';
 import { DocExample } from 'src/app/modules/shared/interfaces/doc-example';
 
 @Component({
@@ -9,6 +9,7 @@ import { DocExample } from 'src/app/modules/shared/interfaces/doc-example';
 })
 export class OverviewComponentComponent implements OnInit {
 
+  buttonBasicExample = buttonBasicExample;
   buttonExamples: Array<DocExample> = buttonExamples;
 
   constructor() { }

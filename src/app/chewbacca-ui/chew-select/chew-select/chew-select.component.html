@@ -1,0 +1,24 @@
+<div class="dropdown chew-select" #dropreference>
+  <div class="dropdown-trigger">
+    <button #origin class="button" aria-haspopup="true" aria-controls="dropdown-menu" [disabled]="_disabled">
+      <div class="chew-select-trigger">
+        <span>{{ value ? value : placeholder }}</span>
+      </div>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <ng-template cdk-portal>
+    <div class="chew-select-panel-wrap">
+      <ng-template [ngIf]="!multiple">
+        <ng-content></ng-content>
+      </ng-template>
+      <ng-template [ngIf]="multiple">
+        <chew-option *ngFor="let option of options" [value]="option.value">
+          <chew-checkbox>{{option.content}}</chew-checkbox>
+        </chew-option>
+      </ng-template>
+    </div>
+  </ng-template>
+</div>

@@ -1,8 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bulma/bulma.sass";
-@import "~@angular/cdk/overlay-prebuilt.css";
+//@import "~@angular/cdk/overlay-prebuilt.css";
+@import "~@angular/cdk/overlay";
+@include cdk-overlay();
 
 @import 'highlight.js/styles/atom-one-light.css';
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+
+// Update some of Bulma's component variables
+$control-border-width: 2px;
+$input-background-color: $beige-lighter;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// $body-background-color: #323232;
+// $body-color: $beige-lighter;
+
+@import "../node_modules/bulma/bulma.sass";
+@import './app/chewbacca-ui/theme/chewbacca-ui.scss';
 
 html, body{
   margin: 0 auto;
@@ -11,6 +40,7 @@ html, body{
 
 .chew-doc-main-container{
   margin-top: 60px;
+  min-height: 100vh;
 }
 
 .main-page{

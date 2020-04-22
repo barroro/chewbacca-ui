@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ContentChild, TemplateRef } from '@angular/core';
+import { DocExample } from '../../interfaces/doc-example';
 
 @Component({
   selector: 'app-doc-example-viewer',
@@ -7,9 +8,7 @@ import { Component, OnInit, Input, ContentChild, TemplateRef } from '@angular/co
 })
 export class DocExampleViewerComponent implements OnInit {
 
-  @Input() title: string;
-  @ContentChild('templateCode', { static: false }) templateCodeRef: TemplateRef<any>;
-  @ContentChild('templateContent', { static: false }) templateContentRef: TemplateRef<any>;
+  @Input() docExample: DocExample;
 
   opened: boolean = false;
 
@@ -21,7 +20,6 @@ export class DocExampleViewerComponent implements OnInit {
   showCode() {
     this.opened = !this.opened;
   }
-
 }
 
 

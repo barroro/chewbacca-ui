@@ -15,6 +15,9 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     CommonModule,
     SelectRoutingModule,
     SharedModule
+  ],
+  entryComponents: [
+    SelectBasicExampleComponent
   ]
 })
 export class SelectModule { }

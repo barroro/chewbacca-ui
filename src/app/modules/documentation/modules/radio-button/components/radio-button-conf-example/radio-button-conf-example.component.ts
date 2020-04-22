@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RadioButtonConfExampleComponent implements OnInit {
 
+  color: string = 'red';
+
   constructor() { }
 
   ngOnInit() {

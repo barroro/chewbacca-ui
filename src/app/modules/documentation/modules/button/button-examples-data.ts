@@ -3,7 +3,7 @@ import { ButtonVarietiesExampleComponent } from './components/button-varieties-e
 import { ButtonBasicExampleComponent } from './components/button-basic-example/button-basic-example.component';
 
 
-export const basicExample: DocExample = {
+export const buttonBasicExample: DocExample = {
   title: 'Basic example',
   html: `
   <h3 class="subtitle">Basic Buttons</h3>
@@ -130,6 +130,6 @@ export const buttonsVarietiesExample: DocExample = {
 };
 
 export const buttonExamples: Array<DocExample> = [
-  basicExample,
+  buttonBasicExample,
   buttonsVarietiesExample
 ];

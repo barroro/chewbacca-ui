@@ -1,1 +1,10 @@
-<p>radio-button-conf-example works!</p>
+<h3 class="subtitle">Radio button configuration</h3>
+<chew-radio-group [(ngModel)]="color" class="radio-group-example">
+  <chew-radio-button value="red" checked="true">Red</chew-radio-button>
+  <chew-radio-button value="blue">Blue</chew-radio-button>
+  <chew-radio-button value="green">Green</chew-radio-button>
+  <chew-radio-button value="yellow">Yellow</chew-radio-button>
+</chew-radio-group>
+<div class="content">
+  Color selected: {{ color }}
+</div>

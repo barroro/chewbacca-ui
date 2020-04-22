@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemePalette } from 'src/app/ngx-bulma/toggle-switch/toggle-switch.component';
+import { ThemePalette } from 'src/app/chewbacca-ui/chew-toggle-switch/toggle-switch.component';
 
 @Component({
   selector: 'app-checkbox-conf-example',

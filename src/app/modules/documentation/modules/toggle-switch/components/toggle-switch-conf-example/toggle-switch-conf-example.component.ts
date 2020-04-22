@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemePalette } from 'src/app/ngx-bulma/toggle-switch/toggle-switch.component';
+import { ThemePalette } from 'src/app/chewbacca-ui/chew-toggle-switch/toggle-switch.component';
 
 @Component({
   selector: 'app-toggle-switch-conf-example',
@@ -10,7 +10,7 @@ export class ToggleSwitchConfExampleComponent implements OnInit {
 
   disabled: boolean = false;
   checked: boolean = false;
-  color: ThemePalette;
+  color: string = 'dark';
 
   constructor() { }
 

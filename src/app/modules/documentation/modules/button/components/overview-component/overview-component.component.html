@@ -24,44 +24,12 @@
         <div class="content">
           <p>Toggle switch is an on/off control that can be toggled via clicking.</p>
         </div>
-        <app-doc-example-viewer title="Basic example">
-          <ng-template #templateCode>
-            <tabs class="is-fullwidth mb-none">
-              <tab title="HTML">
-                <doc-code language="html" code="<toggle-switch>Click me to slide!</toggle-switch>"></doc-code>
-              </tab>
-              <tab title="TS">
-                <doc-code language="typescript" code="
-                import { Component, OnInit } from '@angular/core'; 
-                @Component({
-                  selector: 'app-toggle-switch-basic-example',
-                  templateUrl: './toggle-switch-basic-example.component.html',
-                  styleUrls: ['./toggle-switch-basic-example.component.scss']
-                })
-                export class ToggleSwitchBasicExampleComponent implements OnInit {
-        
-                  constructor() { }
-        
-                  ngOnInit() {
-                  }
-        
-                }">
-                </doc-code>
-              </tab>
-              <tab title="CSS">
-                <doc-code language="css" code="/** No CSS for this example */"></doc-code>
-              </tab>
-            </tabs>
-          </ng-template>
-          <ng-template #templateContent>
-            <app-button-varieties-example></app-button-varieties-example>
-          </ng-template>
-        </app-doc-example-viewer>
+        <app-doc-example-viewer [docExample]="buttonBasicExample"></app-doc-example-viewer>
       </tab>
       <tab title="API">
       </tab>
       <tab title="EXAMPLES">
-        <doc-example-viewer-test *ngFor="let d of buttonExamples" [docExample]="d"></doc-example-viewer-test>
+        <app-doc-example-viewer *ngFor="let d of buttonExamples" [docExample]="d"></app-doc-example-viewer>
       </tab>
     </tabs>
   </div>

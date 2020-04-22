@@ -15,6 +15,9 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     CommonModule,
     InputRoutingModule,
     SharedModule
+  ],
+  entryComponents: [
+    InputBasicExampleComponent
   ]
 })
 export class InputModule { }

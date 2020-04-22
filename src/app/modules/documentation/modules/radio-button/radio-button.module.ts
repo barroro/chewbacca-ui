@@ -17,6 +17,10 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     CommonModule,
     RadioButtonRoutingModule,
     SharedModule
+  ],
+  entryComponents: [
+    RadioButtonBasicExampleComponent,
+    RadioButtonConfExampleComponent
   ]
 })
 export class RadioButtonModule { }
